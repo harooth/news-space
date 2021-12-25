@@ -1,0 +1,54 @@
+/*changes*/
+body
+{
+    background-color: #111117;
+}
+
+.banner
+{
+    overflow: visible;
+    max-width: none;
+    border-radius: 20px;
+    margin: 0 auto 1rem auto;
+    padding: 120px 20px;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    /*justify-content: center;*/
+}
+
+.galaxy
+{
+    background-position: 0 0;
+    width: 100%;
+    height: 70vh;
+    top: -40px;
+    
+    position: absolute;
+    background: url("space.jpg");
+    background-size: 75%;
+    left: 0;
+    z-index: -1;
+    /*transform: scale(1);*/
+    transition: .6s ease;
+    
+
+}
+
+.galaxy::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(transparent 30%, #111117 75%);
+}
+
+.nav-links a:hover
+{
+    color: white;
+}
