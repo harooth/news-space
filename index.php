@@ -1,3 +1,6 @@
+<?php 
+	require "auth/db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +36,25 @@
 					<div class="vertical-line"></div>
 					<button class="upload-button">UPLOAD</button>
 					<div class="vertical-line"></div>
+					<?php 
+
+						if(isset($_SESSION['user']))
+						{
+							echo("<div class='logged_user'>");
+							echo($_SESSION['user']['username'] . '&nbsp;');
+							// echo("<a href='exit.php'><ion-icon style='font-size: 20px;' name='log-out-outline'></ion-icon></a>");
+							echo("<a href='auth/exit.php'>Exit</a>");
+							echo('</div>');
+						}
+						else
+						{
+					?>
 					<div class="user">
 						<img src="nouser.svg">
 					</div>
 
-					<button class="join">JOIN FREE</button>
-					
+					<a href="auth/signup.php"><button class="join">JOIN FREE</button></a>
+					<?php } ?>
 				</div>
 			</div>
 		</nav>

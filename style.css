@@ -9,11 +9,12 @@
 
 body
 {
-    font-size: 1rem;
+    /*font-size: 1rem;*/
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-    text-align: left;
+    /*text-align: left;*/
+    /*transition: .3s ease;*/
 }
 
 input
@@ -148,7 +149,7 @@ body
 
 .nav-right
 {
-    width: 379px;
+    /*width: 379px;*/
     display: flex;
     align-items: center;
 }
@@ -252,7 +253,7 @@ input[type="checkbox"]:checked:before
 {
     border: 2px solid #fff;
     background-color: rgba(255,255,255,0);
-    color: #fff;
+    
     transition: background-color .3s ease;
     border-radius: 20px;
     width: 101px;
@@ -262,7 +263,7 @@ input[type="checkbox"]:checked:before
     letter-spacing: 0.8px;
     font-weight: 700;
     cursor: pointer;
-
+    color: #fff;
     background-color: rgba(255,255,255,0);
     color: #fff;
     transition: background-color .3s ease
@@ -330,4 +331,11 @@ input[type="checkbox"]:checked:before
 .banner>h2
 {
     font-size: 1.4rem;
+}
+
+
+.logged_user
+{
+    margin: 0 15px;
+    color: white;
 }
