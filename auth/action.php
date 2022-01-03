@@ -47,11 +47,9 @@
 		else if(!$data['g-recaptcha-response'])
 		{
 			$_SESSION['errors'] = "Please pass the captcha!";
-		} else {
-
-		// $captcha = json_decode(file_get_contents($query));
-		// if($captcha->success == false)
-		// 		$_SESSION['errors'] = "Incorrect captcha!";
+		} 
+		else 
+		{
 			$url = 'https://www.google.com/recaptcha/api/siteverify';
 			$key = $captcha_private_key;
 			$query = $url.'?secret='.$key.'&response='.$_POST['g-recaptcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR'];
@@ -73,19 +71,21 @@
 			if(!move_uploaded_file($_FILES['avatar']['tmp_name'], $path)) {
 				$path = 'uploads/default.png';
 			}
+
+			$code = mt_rand(1111,9999);
+
 			$user = R::dispense('users');
 			$user->username = $data['username'];
 			$user->email = $data['email'];
 			$user->avatar = $path;
 			$user->password = password_hash($data['password'], PASSWORD_DEFAULT);
+			$user->verif_code = password_hash($code, PASSWORD_DEFAULT);
 			$user->email_verified = 0;
 			R::store($user);
 
-			$code = mt_rand(1111,9999);
 
 			$_SESSION['temp_user'] = [
-					"email" => $user->email,
-					"code" => $code
+					"email" => $user->email
 				];
 
 
@@ -111,9 +111,11 @@
 				{
 					$code = mt_rand(1111,9999);
 
+					$user->verif_code = password_hash($code, PASSWORD_DEFAULT);
+					R::store($user);
+
 					$_SESSION['temp_user'] = [
-					"email" => $user->email,
-					"code" => $code
+							"email" => $user->email
 						];
 
 					$mail->addAddress($user->email);
