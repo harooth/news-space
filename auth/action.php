@@ -5,7 +5,7 @@
 	
 	if (isset($_SESSION['user'])) {
 		header("Location: ../index.php");
-	}else{
+	} else {
 		header("Location: login.php");
 	}
 	$data = $_POST;
@@ -89,9 +89,12 @@
 				];
 
 
-			$mail->addAddress($user->email);
-			$mail->Body    = $code;
-			$mail->send();
+			// $mail->addAddress($user->email);
+			// $mail->Body    = $code;
+			// $mail->send();
+			mail($user->email, "Verification", $code);
+
+
 
 			header("Location: confirm.php");
 		}
@@ -100,51 +103,49 @@
 
 	if(isset($data['do_login']))
 	{
-		//skzbum stugum enq logini arkayutyuny
-		$user = R::findone('users', 'username = ? OR email = ?', array($data['username'], $data['username']));
-		if($user)
+		if(trim($data['username']) != '')
 		{
-			//..heto stugum enq passwordi arkayutyuny
-			if(password_verify($data['password'], $user->password))
+			//skzbum stugum enq logini arkayutyuny
+			$user = R::findone('users', 'username = ? OR email = ?', array($data['username'], $data['username']));
+			if($user)
 			{
-				if($user->email_verified == 0)
+				//..heto stugum enq passwordi arkayutyuny
+				if(password_verify($data['password'], $user->password))
 				{
-					$code = mt_rand(1111,9999);
+					if($user->email_verified == 0)
+					{
+						$code = mt_rand(1111,9999);
 
-					$user->verif_code = password_hash($code, PASSWORD_DEFAULT);
-					R::store($user);
+						$user->verif_code = password_hash($code, PASSWORD_DEFAULT);
+						R::store($user);
 
-					$_SESSION['temp_user'] = [
-							"email" => $user->email
+						$_SESSION['temp_user'] = [
+								"email" => $user->email
+							];
+
+						// $mail->addAddress($user->email);
+						// $mail->Body    = $code;
+						// $mail->send();
+
+						mail($user->email, "Verification", $code);
+
+						header("Location: confirm.php");
+					}
+					else
+					{
+						$_SESSION['user'] = [
+							"username" => $user->username,
+							"email" => $user->email,
+							"avatar" => $user->avatar
 						];
-
-					$mail->addAddress($user->email);
-					$mail->Body    = $code;
-					$mail->send();
-
-					header("Location: confirm.php");
-				}
-				else
-				{
-					$_SESSION['user'] = [
-						"username" => $user->username,
-						"email" => $user->email,
-						"avatar" => $user->avatar
-					];
-					header("Location: ../index.php");
-				}
-				
-			}
-			else
-			{
-				$_SESSION['errors'] = "Wrong password!";
-			}
-		}
-		else 
-		{
-			$_SESSION['errors'] = "Username doesn't exist!";
-		}
+						header("Location: ../index.php");
+					}
+					
+				} else $_SESSION['errors'] = "Wrong password!";
+			} else $_SESSION['errors'] = "Username doesn't exist!";
+		} else $_SESSION['errors'] = "Enter username";
 	}
+
 
 
 

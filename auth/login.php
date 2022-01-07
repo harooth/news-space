@@ -36,7 +36,7 @@
 
 				<div class="pass">
 					<span class="description">Password</span>
-					<a href="">Forgot password?</a>
+					<a href="forgot/index.php">Forgot password?</a>
 				</div>
 				<input type="password" name="password"><br>
 

@@ -6,12 +6,12 @@
 		$mail->Host = 'smtp.mail.ru';
 
 		$mail->SMTPAuth = true;
-		$mail->Username = 'nortest18@mail.ru';
-		$mail->Password = '3Bheb0TkNZV4UzbXsSzs';
+		$mail->Username = 'artempubg58@mail.ru';
+		$mail->Password = 'rUpXLhKZ5c8patvG9fcw';
 		$mail->SMTPSecure = 'tls';
 		$mail->Port = 587;
 
-		$mail->setFrom('nortest18@mail.ru');
+		$mail->setFrom('artempubg58@mail.ru');
 
 		$mail->Subject = 'Confirm';
 ?>

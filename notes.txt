@@ -29,3 +29,8 @@ Other notes:
 	I had to change the name of signin.php to login.php, cause Google Chrome gave me a privacy security error, when I try to visit ...host.com/signin.php. It fixed by changing filename. I also changed it in every file((
 09.11
 	I finally fixed issues with sending emails(hope). If it won't work again, take a look of "mail/help.txt" file.
+31.12
+	Updated main design of login/register.
+
+03.01
+	Changed logic of email erification code. Now it is storing in database.
