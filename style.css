@@ -25,11 +25,6 @@ input
     line-height: inherit;
 }
 
-body
-{
-	height: 1000px;
-}
-
 .navbar
 {
     position: fixed;
@@ -282,7 +277,7 @@ input[type="checkbox"]:checked:before
 .main
 {
     padding-top: 70px;
-    /*max-width: 976px;*/
+    max-width: 976px;
     margin: auto;
 }
 
@@ -347,4 +342,84 @@ input[type="checkbox"]:checked:before
 {
     margin: 0 15px;
     color: white;
+}
+
+/*container*/
+
+.pstik-text
+{
+    height: 55px;
+    text-align: center;
+    padding: 15px;
+    color: #959595;
+    font-size: 14px;
+}
+
+
+.container
+{
+    /*height: 500px;*/
+    border-radius: 34px;
+    background: #E6E6E6;
+    padding: 20px;
+}
+
+.news
+{
+    /*height: 250px;*/
+    border-radius: 34px;
+    background: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    /*display: flex;*/
+}
+
+.featured-image
+{
+    max-width: 200px;
+    border-radius: 15px;
+}
+
+.news-div
+{
+    display: flex;
+}
+
+.news-container
+{
+    /*width: 100%;
+    margin-left: 30px;*/
+    padding: 10px;
+    /*border: 1px solid;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-title
+{
+    font-weight: 600;
+    margin-bottom: 15px;
+    /*font-family: Arial;*/
+}
+
+.news-content
+{
+    font-size: 15px;
+    font-family: Arial;
+    font-weight: 400;
+}
+
+.news-info
+{
+    font-size: 14px;
+    font-family: Arial !important;
+    opacity: 0;
+    transition: .1s ease;
+}
+
+.news:hover .news-info
+{
+    transition: 0.1s ease;
+    opacity: 1;
 }

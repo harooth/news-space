@@ -34,7 +34,7 @@
 						</div>
 					</div>
 					<div class="vertical-line"></div>
-					<button class="upload-button">UPLOAD</button>
+					<a href="news/addNews.php"><button class="upload-button">UPLOAD</button></a>
 					<div class="vertical-line"></div>
 					<?php 
 
@@ -53,7 +53,7 @@
 						<img src="nouser.svg">
 					</div>
 
-					<a href="auth/signup.php"><button class="join">JOIN FREE</button></a>
+					<a href="auth/login.php"><button class="join">JOIN FREE</button></a>
 					<?php } ?>
 				</div>
 			</div>
@@ -83,8 +83,31 @@
 			 <h2>Hot news from each corner of space</h2>
 		</div>
 
+		<div class="pstik-text">
+			<h3>Now let's see what's going on around us! Here are news from your planet!</h3>
+		</div>
 
-		<div class="test"></div>
+		<div class="container">
+			<?php 
+				$data = R::findAll('news');
+				foreach($data as $news) {
+			 ?>
+			<div class="news">
+				 <a href=""><h3 class="news-title"><?php echo $news->title; ?></h3></a>
+				 <div class="news-div">
+					 <img src="news/images/featured.jpg" alt="Featured image" class="featured-image">
+
+					 <div class="news-container">
+					 	
+					 	<p class="news-content"><?php echo $news->excerpt."...  "; ?><a href="">Read more></a></p>
+					 	<p class="news-info">Added by <a href=""><?php echo $news->user; ?>,</a> <?php echo $news->date; ?></p>
+					 </div>
+				 </div>
+				 
+
+			</div>
+			<?php } //foreach ?>
+		</div>
 
 
 	</div>
