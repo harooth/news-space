@@ -277,7 +277,7 @@ input[type="checkbox"]:checked:before
 .main
 {
     padding-top: 70px;
-    max-width: 976px;
+    /*max-width: 976px;*/
     margin: auto;
 }
 
@@ -319,12 +319,16 @@ input[type="checkbox"]:checked:before
 
 .banner
 {
-
+/*    align-items: center;
+    widows: 976px;
+    height: 340px;
+    width: 100%;
+    height: 70vh;*/
 }
 
 .galaxy
 {
-    
+
 }
 
 .banner>h1
@@ -346,6 +350,16 @@ input[type="checkbox"]:checked:before
 
 /*container*/
 
+.container
+{
+    /*height: 500px;*/
+    border-radius: 34px;
+    /*background: #E6E6E6;*/
+    padding: 20px;
+    max-width: 976px;
+    margin: auto;
+}
+
 .pstik-text
 {
     height: 55px;
@@ -355,28 +369,20 @@ input[type="checkbox"]:checked:before
     font-size: 14px;
 }
 
-
-.container
-{
-    /*height: 500px;*/
-    border-radius: 34px;
-    background: #E6E6E6;
-    padding: 20px;
-}
-
 .news
 {
     /*height: 250px;*/
     border-radius: 34px;
-    background: white;
+    /*background: white;*/
     padding: 30px;
     margin-bottom: 20px;
+    max-width: 976px;
     /*display: flex;*/
 }
 
 .featured-image
 {
-    max-width: 200px;
+    max-width: 300px;
     border-radius: 15px;
 }
 
@@ -400,12 +406,15 @@ input[type="checkbox"]:checked:before
 {
     font-weight: 600;
     margin-bottom: 15px;
+    font-size: 22px;
     /*font-family: Arial;*/
 }
 
+
+
 .news-content
 {
-    font-size: 15px;
+    font-size: 16px;
     font-family: Arial;
     font-weight: 400;
 }
@@ -422,4 +431,27 @@ input[type="checkbox"]:checked:before
 {
     transition: 0.1s ease;
     opacity: 1;
+}
+
+.news-input-user, .news-input-date
+{
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.news-input-user
+{
+    width: 150px;
+}
+
+.news-input-submit
+{
+    padding: 7px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.news-input-submit:hover
+{
+    color: green;
 }

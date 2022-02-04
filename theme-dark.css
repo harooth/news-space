@@ -52,3 +52,18 @@ body
 {
     color: white;
 }
+
+.container
+{
+    background: #202733;
+}
+
+.news
+{
+    background: #13121c;
+}
+
+.container *
+{
+    color: white;
+}

@@ -56,3 +56,20 @@
 {
     color: #000;
 }
+
+
+/*news part*/
+.container
+{
+    background: #E6E6E6;
+}
+
+.news
+{
+    background: white;
+}
+
+.news-title a
+{
+    color: black;
+}

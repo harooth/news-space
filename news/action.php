@@ -10,7 +10,7 @@ $excerpt = $data['excerpt'];
 
 if(trim($data['excerpt']) == '')
 {
-	$excerpt = mb_substr($data['content'], 0, mb_strpos($data['content'], " ", 300)); 
+	$excerpt = mb_substr($data['content'], 0, mb_strpos($data['content'], " ", 280)); 
 }
 
 $news = R::dispense('news');

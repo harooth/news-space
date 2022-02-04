@@ -10,7 +10,7 @@ checker.addEventListener("click", function(){
 		applyTheme('dark');
 		localStorage.setItem('theme', 'dark');
 	}
-	else 
+	else
 	{
 		applyTheme('light');
 		localStorage.setItem('theme', 'light');
@@ -20,7 +20,11 @@ checker.addEventListener("click", function(){
 function applyTheme(theme)
 {
 	let themeUrl = `theme-${theme}.css`;
-	document.querySelector('[title="theme"]').setAttribute('href', themeUrl);
+
+	let url = document.querySelector('[title="theme"]').getAttribute('href');
+	let newUrl = url.split("theme-");
+
+	document.querySelector('[title="theme"]').setAttribute('href', newUrl[0]+themeUrl);
 }
 
 
