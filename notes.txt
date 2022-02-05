@@ -4,14 +4,14 @@ Fixed errors:
 	Login with username and email the same time (+);
 	Use avatar in the register page (+);
 	Update information in profile (-);
-	Use error logo and success logo in messages (+);
+	//Use error logo and success logo in messages (+);
 	Sending email (+) //09.11.2021
 	Real-time errors (-)
 	Login with gmail, facebook etc. (-)
 	Design (+)
-		Dark theme (not required) (+)
-	Google recaptcha (-)
-	Save the verification code in db (-)
+		Dark theme (+)
+	Google recaptcha (+)
+	Save the verification code in db (+)
 	View counter (-)
 
 
@@ -33,4 +33,6 @@ Other notes:
 	Updated main design of login/register.
 
 03.01
-	Changed logic of email erification code. Now it is storing in database.
+	Changed logic of email verification code. Now it is storing in database.
+04.02.2022 - Let's talk a little about new features in website. At this moment we can add news,
+	show them from database, use filters. This design will be the main design, so I'm not going to change it. Every post opens in single.php itself.

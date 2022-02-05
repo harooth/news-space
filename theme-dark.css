@@ -67,3 +67,19 @@ body
 {
     color: white;
 }
+
+.news-category, .news-category option, .news-input-date, .news-input-user
+{
+    color: black;
+}
+
+.news-input-submit
+{
+    background: #202733;
+    color: white;
+}
+
+.news-input-submit:hover
+{
+    color: black;
+}

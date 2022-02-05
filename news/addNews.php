@@ -7,11 +7,31 @@ if(!isset($_SESSION['user'])) {
 } else {
 ?>
 
-<form action="action.php" method="post">
-	<p>Enter news title</p><input type="text" name="title">
-	<p>Enter Excerpt(Optional, if you won't fill this field, it will filled automaticelly)</p><input type="text" name="excerpt">
-	<p>Enter Excerpt(optional)</p><textarea cols="30" rows="10" name="content"></textarea><br>
+<form action="action.php" method="post" style="max-width: 500px;" class="addingForm">
+	<hr>
+	<p>News title</p><input type="text" name="title"><hr>
+	<p>News excerpt(Optional, if you won't fill this field, it will filled automaticelly)</p><input type="text" name="excerpt"><br><br><hr>
+
+	<p>Content</p><textarea cols="30" rows="10" name="content"></textarea><br><br>
+	<hr>
+	<div class="category-div">
+		<span>Category:</span>
+		<select name="category" class="category">
+			<option value="uncategorized">Select</option>
+		    <option value="Sport">Sport</option>
+		    <option value="Culture">Culture</option>
+		    <option value="Nature">Nature</option>
+		    <option value="Travel">Travel</option>
+		    <option value="Music">Music</option>
+		    <option value="IT">IT</option>
+		    <option value="Health">Health and Beauty</option>
+		    <option value="Weather">Weather</option>
+		</select>
+	</div>
+	
+	<hr>
 	<button type="submit" name="addNews">Submit</button>
+	<hr>
 </form>
 
 
@@ -21,3 +41,4 @@ if(!isset($_SESSION['user'])) {
 
 
 ?>
+<script src="script.js"></script>

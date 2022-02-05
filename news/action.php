@@ -19,10 +19,14 @@ $news->excerpt = $excerpt;
 $news->content = $data['content'];
 $news->user = $_SESSION['user']['username'];
 $news->date = date('Y-m-d');
+$news->category = @$data['category'];
+$news->sub_category = @$data['subcategory'];
 $news->confirmed = 0;
 R::store($news);
+// echo "<br>".$data['category']."<br>";
+// echo $data['subcategory'];
 }
-header("Location: addNews.php");
+header("Location: ../");
 
 // $data = R::findAll('news');
 // foreach($data as $news)

@@ -425,6 +425,8 @@ input[type="checkbox"]:checked:before
     font-family: Arial !important;
     opacity: 0;
     transition: .1s ease;
+    display: flex;
+    
 }
 
 .news:hover .news-info
@@ -454,4 +456,10 @@ input[type="checkbox"]:checked:before
 .news-input-submit:hover
 {
     color: green;
+}
+
+.news-category
+{
+    border: 1px solid;
+    border-radius: 10px;
 }
